@@ -4,19 +4,38 @@ describe('template spec', () => {
   })
 })
 
-
-
-describe("My first test",() => {
+describe("My first passing test",() => {
   it("Does not do much!",() => {
-    //  expect(true).to.equal(true)
       expect(true).to.equal(true);
   })
 })
 
+describe("My first failing test",() => {
 
-
-describe("My first test",() => {
   it("Does not do much!", () => {
-    expect(true).to.equal(false);
+      expect(true).to.equal(false);
   }) 
+
+})
+
+describe("Visit a page",() => {
+  it("visit the Kitchen Sink",() => {
+    cy.visit('https://example.cypress.io');
+  })
+})
+
+describe("query for an element",() => {
+  it('find the content "type"',() => {
+     cy.visit("https://example.cypress.io")
+
+     cy.contains("type");
+  })
+})
+
+describe("Click an element",() => {
+  it('find the content "type"',() => {
+     cy.visit("https://example.cypress.io")
+
+     cy.contains("type").click();
+  })
 })
